@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ArtistComponent } from './pages/artist/artist.component';
+import { NumbersConvertionPipe } from './pipes/numbers-convertion.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ArtistComponent } from './pages/artist/artist.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    ArtistComponent
+    ArtistComponent,
+    NumbersConvertionPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,3 @@
-
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
     
@@ -13,7 +11,8 @@ import { Artist } from '../interfaces/artist';
 })
 export class DeezerService {
     
-  private apiURL = "https://api.deezer.com/artist/12";
+  private apiURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/12";
+  private searchUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem"
     
   httpOptions = {
     headers: new HttpHeaders({
@@ -50,6 +49,10 @@ export class DeezerService {
     .pipe(
       catchError(this.errorHandler)
     );
+  }
+
+  search(){
+
   }
 
 
