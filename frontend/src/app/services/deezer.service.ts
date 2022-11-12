@@ -52,8 +52,7 @@ export class DeezerService {
     );
   }
 
-     
-   
+
   errorHandler(error:any) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
