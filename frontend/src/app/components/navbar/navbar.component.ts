@@ -12,4 +12,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  search_fun(name: string){
+    console.log(name)
+  }
 }

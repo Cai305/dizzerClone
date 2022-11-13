@@ -23,21 +23,21 @@ export class DeezerService {
   constructor(private httpClient: HttpClient) { }
     
   get_All_Artist(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(this.apiURL)
+    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
     .pipe(
       catchError(this.errorHandler)
     );
   }
 
   get_One_Artist(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(this.apiURL)
+    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
     .pipe(
       catchError(this.errorHandler)
     );
   }
 
   get_All__Artist_Albums(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(this.apiURL)
+    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
     .pipe(
       catchError(this.errorHandler)
     );
@@ -45,14 +45,17 @@ export class DeezerService {
 
 
   get_All_Artist_Top_Tracks(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(this.apiURL)
+    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
     .pipe(
       catchError(this.errorHandler)
     );
   }
 
-  search(){
-
+  search_Artist(artist_name:string){
+    return this.httpClient.get<Artist[]>(`${this.searchUrl}+${artist_name}`)
+    .pipe(
+      catchError(this.errorHandler)
+    );
   }
 
 

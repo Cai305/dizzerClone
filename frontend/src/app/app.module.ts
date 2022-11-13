@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ArtistComponent } from './pages/artist/artist.component';
 import { NumbersConvertionPipe } from './pipes/numbers-convertion.pipe';
+import { SearchComponent } from './pages/search/search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,12 +19,15 @@ import { NumbersConvertionPipe } from './pipes/numbers-convertion.pipe';
     NavbarComponent,
     HomeComponent,
     ArtistComponent,
-    NumbersConvertionPipe
+    NumbersConvertionPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
