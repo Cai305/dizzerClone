@@ -16,7 +16,6 @@ listOfArtists!: Array<Artist>;
 
   ngOnInit(): void {
 
-   
      this.deezer.get_User_Artist().subscribe((data:any)=>{
       this.listOfArtists = data.data;
       console.log(this.listOfArtists[0]);
@@ -28,7 +27,6 @@ listOfArtists!: Array<Artist>;
 
   gotoArtist(id:any){
    return this.router.navigate(['/artist/'+id]);
-  
   }
 
 }

@@ -28,8 +28,8 @@ export class ArtistComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.id = parseInt(this.route.snapshot.params['id']);
-    console.log( this.route.snapshot.params['id'])
+    this.id = parseInt(this.route.snapshot.params['sid']);
+    console.log( "sjnj",this.route.snapshot.params['id'])
     this.get_Artist(this.id);
     this.get_Artist_Albums(this.id);
     this.get_Artist_Top5(this.id);
@@ -52,7 +52,7 @@ export class ArtistComponent implements OnInit {
 
   get_Artist_Top5(id:number){
     this.deezer.get_Top_Songs(id).subscribe((songs:any)=>{
-      console.log("songs :   ",songs.data);
+      console.log(songs.data);
       this.top5Songs= songs.data;
     })
   }

@@ -124,15 +124,16 @@
               </div>
             
               <div class="home__myArtists">
-                <!-- <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> -->
-            
-                <div *ngFor='let song of [1,2,3,4,5]'>
+               
+               
+                <div *ngFor='let song of top5Songs; let i = index;'>
                     <div class="d-flex justify-content-between">
                        <div>
-1                               <span class='artist-name title text-capitalize'>song name</span>
+                        <label>{{ 5 * 1000 | date:'mm:ss'}}</label>
+                        <span class='artist-name title text-capitalize'>{{i + 1}}. {{song.title_short | songname}}</span>
                        </div>
                        <div>
-2                               <span class='artist-name title text-capitalize'>song duration</span>
+                        <span class='artist-name title text-capitalize'>{{ 60 * song.duration | date:'mm:ss'}} </span>
                        </div>
                     </div>
                 </div>
@@ -148,8 +149,7 @@
 
 
             <div class="home__myArtists">
-                <!-- <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> -->
-            
+       
                 <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
                     <br>
                   <div class="artistcard" >
@@ -167,3 +167,4 @@
     </div>
 
   </div>
+
