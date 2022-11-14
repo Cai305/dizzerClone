@@ -1,0 +1,101 @@
+header {
+  position: sticky;
+  top: 0;
+  height: 4rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-right: 1rem;
+  border-bottom: solid 1px var(--grey500);
+  background-color: var(--grey700);
+  z-index: 10;
+
+
+  svg {
+    height: 1.5rem;
+    cursor: pointer;
+  }
+
+  .center {
+    flex: 1;
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--dark);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+
+    input {
+      background-color: transparent;
+      border: none;
+      color: var(--grey100);
+    }
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    header {
+        gap: 3rem;
+        padding-right: 3rem;
+      
+        svg {
+          height: 2rem;
+        }
+      
+        .center {
+          flex: 1;
+          display: flex;
+          gap: 0.5rem;
+          background-color: var(--dark);
+          padding: 0.5rem;
+          border-radius: var(--radius);
+      
+          input {
+            background-color: transparent;
+            border: none;
+            flex: 1;
+            color: var(--grey100);
+          }
+        }
+      
+        .right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+
+          i {
+            cursor: pointer;
+            background-color: var(--grey400);
+            padding: 0.4rem .5rem;
+            border-radius: 50%;
+            transition: var(--transition);
+
+            &:hover {
+                transform: scale(1.1);
+                background-color: var(--grey500);
+            }
+          }
+
+          img {
+            width: 2.3rem;
+            border-radius: 50%;
+            border: solid 2px var(--grey200);
+            object-fit: cover;
+            transition: var(--transition);
+            cursor: pointer;
+
+            &:hover {
+                border: solid 2px var(--grey100);
+                transform: scale(1.2);
+            }
+          }
+        }
+      }
+}

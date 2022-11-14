@@ -1,65 +1,169 @@
-.<div class="container-fluid">
-      <div class="row">
-        <div class="card mb-3" style="max-width: 100%; ">
-            <div class="row g-0">
-              <div class="col-md-8">
+<!-- 
+
+<div class="home">
+ 
+    <div class="artistcard2">
+        <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+        <div class="details">
+           <span class='title'>hello</span>
+           <span class='subtitle'>hello</span>
+        </div>
+     </div>
+
+    <div class="title noselect">
+      <i class="bi bi-boombox-fill"></i>
+      <span>Top Tracks</span>
+    </div>
+  
+    <div class="home_home__toptracks">
     
-    
-                <div class="container text-center">
-                    <div class="row">
-                      <div class="col-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{_artist.name}}</h5>
-                            <p class="card-text">{{_artist.nb_fan | numbersConvertion}} Fans</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <img src={{_artist.picture_small}} class="img-fluid rounded-start" alt="...">
-                      </div>
-                    </div>
-                  </div>
-    
-         
-              </div>
-              <div class="col-md-4">
-                <ul class="list-group">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                    <li class="list-group-item">A fourth item</li>
-                    <li class="list-group-item">And a fifth one</li>
-                  </ul>
-              </div>
+        <div class="trackdetails" *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
+            <div>
+                <label class='tracktitle'> Mboneni </label>
             </div>
-          </div>
+
+            <div>
+                <label class='trachsubtitle'>12:45</label>
+            </div>
+         </div>
+
+    </div>
+
+    <div class="title noselect">
+        <i class="bi bi-boombox-fill"></i>
+        <span>Top Albums</span>
       </div>
+    
+      <div class="home__myArtists" *ngFor='let artist of albums'>
+        
+        <div class="artistcard">
+            <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+            <div class="details">
+            <span class='title'>hello</span>
+            <span class='subtitle'>hello</span>
+            </div>
+        </div>
+        <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard>
+      </div>
+  </div>
+   -->
 
-      <!-- Albums -->
-      <div class="row">
-        <h1>Albums</h1>
 
-        <div  class="col col-xl-3" *ngFor="let album of _albums">
-            <br>
+
+   <!-- <div class="home">
+   
+    <div class="artistcard" >
+        <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+        <div class="details">
+           <span class='title'>name</span>
+           <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
+        </div>
+     </div>
+  
+    <div class="title noselect">
+      <i class="bi bi-boombox-fill"></i>
+      <span>Your favourite artists</span>
+    </div>
+  
+    <div class="home__myArtists">
+      <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> 
+  
+      <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
+        <div class="artistcard" >
+          <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+          <div class="details">
+             <span class='title'>name</span>
+             <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
+          </div>
+       </div>
+  
+      </div>
+    </div>
+
+    <div class="title noselect">
+        <i class="bi bi-boombox-fill"></i>
+        <span>Your favourite artists</span>
+      </div>
+    
+      <div class="home__myArtists">
+        <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard>
+    
+        <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
+          <div class="artistcard" >
+            <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+            <div class="details">
+               <span class='title'>name</span>
+               <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
+            </div>
+         </div>
+    
+        </div>
+      </div>
+  </div>
+ -->
+
+
+  <div class="container-fluid">
+    <div class="col">
+        <div class="row">
             <div class="card" >
-                <img src={{album.cover_medium}} class="card-img-top" alt="...">
+                <img src={{artist.picture_xl}} class="card-img card-img-top" alt="...">
                 <div class="card-body">
-                 <h5>{{ album.title }}</h5>
-                 <h5>{{ album.release_date |   date: 'yyyy' }}</h5>
+                    <div class="details">
+                        <span class='artist-name title text-capitalize'>{{artist.name}}</span>
+                        <br/>
+                        <span class='subtitle'>{{artist.nb_fan | numbersTransform }} Fans</span>
+                     </div>
                 </div>
               </div>
-          </div>
-      </div>
+        </div>
+        <div class="row">
+            <div class="title noselect">
+                <i class="bi bi-boombox-fill"></i>
+                <span>Top 5 Songs</span>
+              </div>
+            
+              <div class="home__myArtists">
+                <!-- <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> -->
+            
+                <div *ngFor='let song of [1,2,3,4,5]'>
+                    <div class="d-flex justify-content-between">
+                       <div>
+1                               <span class='artist-name title text-capitalize'>song name</span>
+                       </div>
+                       <div>
+2                               <span class='artist-name title text-capitalize'>song duration</span>
+                       </div>
+                    </div>
+                </div>
+              </div>
+          
+        </div>
+        <div class="row">
+
+            <div class="title noselect">
+                <i class="bi bi-boombox-fill"></i>
+                <span>Your favourite artists</span>
+              </div>
 
 
-</div>
+            <div class="home__myArtists">
+                <!-- <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> -->
+            
+                <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
+                    <br>
+                  <div class="artistcard" >
+                    <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                    <div class="details">
+                       <span class='title'>name</span>
+                       <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
+                    </div>
+                 </div>
+                 <br>
+                </div>
+              </div>
+        </div>
 
+    </div>
 
-
-<div class="alert alert-success" role="alert">
-  <h4 class="alert-heading"></h4>
-  <p></p>
-  <p class="mb-0"></p>
-</div>
-
-
+  </div>

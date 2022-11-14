@@ -11,8 +11,11 @@ import { Artist } from '../interfaces/artist';
 })
 export class DeezerService {
     
-  private apiURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/12";
-  private searchUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem"
+  apiURL = "";
+  private artistURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist";
+  private searchUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem";
+  private usersArtists = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/user/2529/artists"
+  private artistsAlbumUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist"
     
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,22 +25,15 @@ export class DeezerService {
    
   constructor(private httpClient: HttpClient) { }
     
-  get_All_Artist(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
+  get_One_Artist(id:number): Observable<Artist[]> {
+    return this.httpClient.get<Artist[]>(`${this.artistURL}/id`)
     .pipe(
       catchError(this.errorHandler)
     );
   }
 
-  get_One_Artist(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
-    .pipe(
-      catchError(this.errorHandler)
-    );
-  }
-
-  get_All__Artist_Albums(): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(`${this.apiURL}`)
+  get_Artist_Albums(id:number): Observable<Artist[]> {
+    return this.httpClient.get<any[]>("https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/27/albums")
     .pipe(
       catchError(this.errorHandler)
     );
@@ -53,6 +49,27 @@ export class DeezerService {
 
   search_Artist(artist_name:string){
     return this.httpClient.get<Artist[]>(`${this.searchUrl}+${artist_name}`)
+    .pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
+  get_Artist(){
+    return this.httpClient.get<Artist[]>(`${this.searchUrl}`)
+    .pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
+  get_User_Artist(){
+    return this.httpClient.get<Artist[]>(`${this.usersArtists}`)
+    .pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
+  get_Top_Songs(id:number){
+    return this.httpClient.get<any[]>("https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/27/top")
     .pipe(
       catchError(this.errorHandler)
     );
