@@ -1,1 +1,24 @@
-<p>home works!</p>
+<div class="home">
+  <app-banner></app-banner>
+
+  <div class="title noselect">
+    <i class="bi bi-boombox-fill"></i>
+    <span>Your favourite artists</span>
+  </div>
+
+  <div class="home__myArtists">
+    <!-- <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> -->
+
+    <div *ngFor='let artist of listOfArtists'>
+
+      <div class="artistcard" (click)="gotoArtist(artist.id)">
+        <img src={{artist.picture_big}} alt="">
+        <div class="details">
+           <span class='title'>{{artist.name}}</span>
+           <span class='subtitle'>{{artist.nb_fan | numbersTransform}} Fans</span>
+        </div>
+     </div>
+
+    </div>
+  </div>
+</div>

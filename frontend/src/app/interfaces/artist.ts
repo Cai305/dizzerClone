@@ -13,6 +13,4 @@ export interface Artist{
     "radio": boolean,
     "tracklist": string,
     "type": string,
-
-  
-} 
+}
