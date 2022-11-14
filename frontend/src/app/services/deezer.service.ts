@@ -11,7 +11,7 @@ import { Artist } from '../interfaces/artist';
 })
 export class DeezerService {
     
-  apiURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
+  apiURL = "https://api.deezer.com/";
   private artistURL = this.apiURL +"artist";
   private searchUrl = this.apiURL +"search?q=";
   private usersArtists = this.apiURL + "user/2529/artists"
@@ -69,7 +69,7 @@ export class DeezerService {
   }
 
   get_Top_Songs(id:number){
-    return this.httpClient.get<any[]>("https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/27/top")
+    return this.httpClient.get<any[]>(`${this.usersArtists}`+"artist/"+id+ "/top")
     .pipe(
       catchError(this.errorHandler)
     );
