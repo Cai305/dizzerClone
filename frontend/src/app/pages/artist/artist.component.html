@@ -133,7 +133,7 @@
                         <span class='artist-name title text-capitalize'>{{i + 1}}. {{song.title_short | songname}}</span>
                        </div>
                        <div>
-                        <span class='artist-name title text-capitalize'>{{ 5 * 1000 | date:'mm:ss'}} song duration</span>
+                        <span class='artist-name title text-capitalize'>{{ 60 * song.duration | date:'mm:ss'}} </span>
                        </div>
                     </div>
                 </div>
@@ -149,8 +149,7 @@
 
 
             <div class="home__myArtists">
-                <!-- <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> -->
-            
+       
                 <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
                     <br>
                   <div class="artistcard" >
@@ -169,4 +168,3 @@
 
   </div>
 
-  <label>{{ 60 * 1000 | date:'mm:ss'}}</label>
