@@ -11,11 +11,11 @@ import { Artist } from '../interfaces/artist';
 })
 export class DeezerService {
     
-  apiURL = "";
-  private artistURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist";
-  private searchUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=eminem";
-  private usersArtists = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/user/2529/artists"
-  private artistsAlbumUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist"
+  apiURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
+  private artistURL = this.apiURL +"artist";
+  private searchUrl = this.apiURL +"search?q=";
+  private usersArtists = this.apiURL + "user/2529/artists"
+  private artistsAlbumUrl = this.apiURL +"artist";
     
   httpOptions = {
     headers: new HttpHeaders({
@@ -26,7 +26,7 @@ export class DeezerService {
   constructor(private httpClient: HttpClient) { }
     
   get_One_Artist(id:number): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(`${this.artistURL}/id`)
+    return this.httpClient.get<Artist[]>(`${this.artistURL}/`+id)
     .pipe(
       catchError(this.errorHandler)
     );
