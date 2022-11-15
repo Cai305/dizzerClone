@@ -20,8 +20,6 @@ listOfArtists!: Array<Artist>;
       this.listOfArtists = data.data;
       console.log(this.listOfArtists[0]);
     })
-  
-    
   }
 
 

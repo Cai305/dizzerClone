@@ -1,107 +1,3 @@
-<!-- 
-
-<div class="home">
- 
-    <div class="artistcard2">
-        <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-        <div class="details">
-           <span class='title'>hello</span>
-           <span class='subtitle'>hello</span>
-        </div>
-     </div>
-
-    <div class="title noselect">
-      <i class="bi bi-boombox-fill"></i>
-      <span>Top Tracks</span>
-    </div>
-  
-    <div class="home_home__toptracks">
-    
-        <div class="trackdetails" *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
-            <div>
-                <label class='tracktitle'> Mboneni </label>
-            </div>
-
-            <div>
-                <label class='trachsubtitle'>12:45</label>
-            </div>
-         </div>
-
-    </div>
-
-    <div class="title noselect">
-        <i class="bi bi-boombox-fill"></i>
-        <span>Top Albums</span>
-      </div>
-    
-      <div class="home__myArtists" *ngFor='let artist of albums'>
-        
-        <div class="artistcard">
-            <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-            <div class="details">
-            <span class='title'>hello</span>
-            <span class='subtitle'>hello</span>
-            </div>
-        </div>
-        <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard>
-      </div>
-  </div>
-   -->
-
-
-
-   <!-- <div class="home">
-   
-    <div class="artistcard" >
-        <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-        <div class="details">
-           <span class='title'>name</span>
-           <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
-        </div>
-     </div>
-  
-    <div class="title noselect">
-      <i class="bi bi-boombox-fill"></i>
-      <span>Your favourite artists</span>
-    </div>
-  
-    <div class="home__myArtists">
-      <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard> 
-  
-      <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
-        <div class="artistcard" >
-          <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-          <div class="details">
-             <span class='title'>name</span>
-             <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
-          </div>
-       </div>
-  
-      </div>
-    </div>
-
-    <div class="title noselect">
-        <i class="bi bi-boombox-fill"></i>
-        <span>Your favourite artists</span>
-      </div>
-    
-      <div class="home__myArtists">
-        <app-artistcard *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'></app-artistcard>
-    
-        <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
-          <div class="artistcard" >
-            <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-            <div class="details">
-               <span class='title'>name</span>
-               <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
-            </div>
-         </div>
-    
-        </div>
-      </div>
-  </div>
- -->
-
 
   <div class="container-fluid">
     <div class="col">
@@ -129,7 +25,6 @@
                 <div *ngFor='let song of top5Songs; let i = index;'>
                     <div class="d-flex justify-content-between">
                        <div>
-                        <label>{{ 5 * 1000 | date:'mm:ss'}}</label>
                         <span class='artist-name title text-capitalize'>{{i + 1}}. {{song.title_short | songname}}</span>
                        </div>
                        <div>
@@ -144,19 +39,18 @@
 
             <div class="title noselect">
                 <i class="bi bi-boombox-fill"></i>
-                <span>Your favourite artists</span>
-              </div>
-
+                <span>Total albums</span><span>{{total_albums}}</span>
+            </div>
 
             <div class="home__myArtists">
        
-                <div *ngFor='let artist of [1,2,3,4,5,6,7,8,9]'>
+                <div *ngFor='let album of albums'>
                     <br>
                   <div class="artistcard" >
-                    <img src="https://images.unsplash.com/photo-1560800452-f2d475982b96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                    <img src={{album.cover_xl}} alt="">
                     <div class="details">
-                       <span class='title'>name</span>
-                       <span class='subtitle'>artist.nb_fan | numbersTransform Fans</span>
+                       <span class='title'>{{album.title | songname }}</span>
+                       <span class='subtitle'>{{ album.release_date |  date: 'yyyy' }}</span>
                     </div>
                  </div>
                  <br>

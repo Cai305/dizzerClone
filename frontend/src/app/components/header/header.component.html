@@ -1,5 +1,5 @@
 <header>
-  <svg
+  <svg  [routerLink]="['/']" routerLinkActive="router-link-active" 
     viewBox="0 0 144 28"
     xmlns="http://www.w3.org/2000/svg"
     role="img"
@@ -71,8 +71,12 @@
     </g>
   </svg>
   <div class="center">
-    <i class="bi bi-search"></i>
-    <input type="text" placeholder="Search..." />
+   
+    <form [formGroup]="searchForm" (ngSubmit)="getSearchText()">
+      <button type="submit" class="mybtn"><i type="submit" class="bi bi-search" type="submit"></i></button>
+      <input type="text" placeholder="Search..." formControlName="search" />
+    </form>
+    
   </div>
   <div class="right">
     <i class="bi bi-bell-fill"></i>
