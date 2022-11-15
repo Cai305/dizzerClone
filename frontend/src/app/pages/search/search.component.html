@@ -1,1 +1,64 @@
-<p>search works!</p>
+
+  <div class="container-fluid">
+    <div class="col">
+        <div class="row">
+            <div class="card" >
+                <img src={{artist.picture_xl}} class="card-img card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="details">
+                        <span class='artist-name title text-capitalize'>{{artist.name}}</span>
+                        <br/>
+                        <span class='subtitle'>{{artist.nb_fan | numbersTransform }} Fans</span>
+                     </div>
+                </div>
+              </div>
+        </div>
+        <div class="row">
+            <div class="title noselect">
+                <i class="bi bi-boombox-fill"></i>
+                <span>Top 5 Songs</span>
+              </div>
+            
+              <div class="home__myArtists">
+               
+               
+                <div *ngFor='let song of top5Songs; let i = index;'>
+                    <div class="d-flex justify-content-between">
+                       <div>
+                        <span class='artist-name title text-capitalize'>{{i + 1}}. {{song.title_short | songname}}</span>
+                       </div>
+                       <div>
+                        <span class='artist-name title text-capitalize'>{{ 60 * song.duration | date:'mm:ss'}} </span>
+                       </div>
+                    </div>
+                </div>
+              </div>
+          
+        </div>
+        <div class="row">
+
+            <div class="title noselect">
+                <i class="bi bi-boombox-fill"></i>
+                <span>Total albums</span><span>{{total_albums}}</span>
+            </div>
+
+            <div class="home__myArtists">
+       
+                <div *ngFor='let album of albums'>
+                    <br>
+                  <div class="artistcard" >
+                    <img src={{album.cover_xl}} alt="">
+                    <div class="details">
+                       <span class='title'>{{album.title | songname }}</span>
+                       <span class='subtitle'>{{ album.release_date |  date: 'yyyy' }}</span>
+                    </div>
+                 </div>
+                 <br>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+  </div>
+

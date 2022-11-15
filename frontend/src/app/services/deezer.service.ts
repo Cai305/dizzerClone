@@ -11,7 +11,7 @@ import { Artist } from '../interfaces/artist';
 })
 export class DeezerService {
     
-  apiURL = "https://api.deezer.com/";
+  apiURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
   private artistURL = this.apiURL +"artist";
   private searchUrl = this.apiURL +"search?q=";
   private usersArtists = this.apiURL + "user/2529/artists"
