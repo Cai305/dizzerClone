@@ -1,12 +1,15 @@
 
-  <div class="container-fluid">
-    <div class="col">
-        <div class="row">
+  <div class="home container-fluid">
+    <div class="col ">
+        <div class="row row-md-1 ">
             <div class="card" >
-                <img src={{artist.picture_xl}} class="card-img card-img-top" alt="...">
+                <div class="artist-image">
+                  <br/>
+                  <img src={{artist.picture_xl}} class="card-img card-img-top img-fluid" style="height:50vh !important" alt="...">
+                </div>
                 <div class="card-body">
                     <div class="details">
-                        <span class='artist-name title text-capitalize'>{{artist.name}}</span>
+                        <span class='name-artist text-capitalize'>{{artist.name}}</span>
                         <br/>
                         <span class='subtitle'>{{artist.nb_fan | numbersTransform }} Fans</span>
                      </div>
@@ -19,17 +22,15 @@
                 <span>Top 5 Songs</span>
               </div>
             
-              <div class="home__myArtists">
-               
-               
-                <div *ngFor='let song of top5Songs; let i = index;'>
-                    <div class="d-flex justify-content-between">
-                       <div>
-                        <span class='artist-name title text-capitalize'>{{i + 1}}. {{song.title_short | songname}}</span>
-                       </div>
-                       <div>
-                        <span class='artist-name title text-capitalize'>{{ 60 * song.duration | date:'mm:ss'}} </span>
-                       </div>
+              <div>
+                <div class="top5">
+                    <div class="col ">
+                      <ul class="list-group" *ngFor='let song of top5Songs; let i = index;'>
+                        <li class="list-group-item mt-1 d-flex justify-content-between">
+                          <span class='artist-name  text-capitalize'>{{i + 1}}. {{song.title_short | songname}}</span>
+                          <span class='artist-name text-capitalize'>{{ 360 * song.duration | date:'mm:ss'}} </span>
+                        </li>
+                      </ul>
                     </div>
                 </div>
               </div>
@@ -49,7 +50,7 @@
                   <div class="artistcard" >
                     <img src={{album.cover_xl}} alt="">
                     <div class="details">
-                       <span class='title'>{{album.title | songname }}</span>
+                       <span class='album-title'>{{album.title | songname }}</span>
                        <span class='subtitle'>{{ album.release_date |  date: 'yyyy' }}</span>
                     </div>
                  </div>
@@ -61,4 +62,7 @@
     </div>
 
   </div>
+
+
+
 

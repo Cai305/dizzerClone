@@ -12,10 +12,11 @@ import { Artist } from '../interfaces/artist';
 export class DeezerService {
     
   apiURL = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/";
-  private artistURL = this.apiURL +"artist";
+  private artistURL = this.apiURL +"artist/";
+  private albumUrl = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/"
   private searchUrl = this.apiURL +"search?q=";
   private usersArtists = this.apiURL + "user/2529/artists"
-  private artistsAlbumUrl = this.apiURL +"artist";
+  
     
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,15 +26,22 @@ export class DeezerService {
    
   constructor(private httpClient: HttpClient) { }
     
-  get_One_Artist(id:number): Observable<Artist[]> {
-    return this.httpClient.get<Artist[]>(`${this.artistURL}/`+id)
+  get_One_Artist(id:any): Observable<Artist[]> {
+    return this.httpClient.get<Artist[]>(`${this.artistURL}`+id)
     .pipe(
       catchError(this.errorHandler)
     );
   }
 
   get_Artist_Albums(id:number): Observable<Artist[]> {
-    return this.httpClient.get<any[]>("https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/27/albums")
+    return this.httpClient.get<any[]>(this.artistURL +id+ "/albums")
+    .pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
+  get_One_Album(id:number){
+    return this.httpClient.get<any[]>(this.albumUrl+id)
     .pipe(
       catchError(this.errorHandler)
     );
@@ -69,7 +77,7 @@ export class DeezerService {
   }
 
   get_Top_Songs(id:number){
-    return this.httpClient.get<any[]>(`${this.usersArtists}`+"artist/"+id+ "/top")
+    return this.httpClient.get<any[]>(this.artistURL + id + '/top')
     .pipe(
       catchError(this.errorHandler)
     );

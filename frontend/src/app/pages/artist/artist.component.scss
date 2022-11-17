@@ -35,28 +35,9 @@
       gap: 1rem;
     }
   }
+
   
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    .home {
-      .title {
-        font-size: 2rem;
-        text-align: left;
-        padding-left: var(--desktopMargin);
-      }
-  
-      .home__myArtists {
-        display: grid;
-        padding: 1.5rem var(--desktopMargin);
-        grid-template-columns: repeat(auto-fit, 15rem);
-        grid-auto-rows: 15rem;
-        gap: 2rem;
-        justify-content: center;
-      }
-    }
-  }
-  
-  
+
   .artistcard {
     position: relative;
     background-color: red;
@@ -108,17 +89,44 @@
     }
   }
 
-  card{
-    width: 100vw;
-    background-color: var(--grey700-transparent);
-  }
-  
-
-  card-img{
-    
-    height: 14rem;
-  }
-
   .artist-name{
     color: var(--pink50)
   }
+
+
+   // Medium devices (tablets, 768px and up)
+   @media (min-width: 768px) {
+    .home {
+      .title {
+        font-size: 2rem;
+        text-align: left;
+        padding-left: var(--desktopMargin);
+      }
+  
+      .home__myArtists {
+        display: grid;
+        padding: 1.5rem var(--desktopMargin);
+        grid-template-columns: repeat(auto-fit, 15rem);
+        grid-auto-rows: 15rem;
+        gap: 2rem;
+        justify-content: center;
+      }
+      .card-img {
+        height:50vh !important;
+        object-fit: cover;
+      }
+      .top5{
+        padding: 1.5rem var(--desktopMargin);
+      }
+      .name-artist{
+        color: var(--pink50);
+        font-size: 2rem;
+      }
+      .album-title {
+        font-size: 1rem;
+        text-align: left;
+      }
+   
+    }
+  }
+  

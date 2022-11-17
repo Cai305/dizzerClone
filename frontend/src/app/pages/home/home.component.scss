@@ -36,27 +36,6 @@
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .home {
-    .title {
-      font-size: 2rem;
-      text-align: left;
-      padding-left: var(--desktopMargin);
-    }
-
-    .home__myArtists {
-      display: grid;
-      padding: 1.5rem var(--desktopMargin);
-      grid-template-columns: repeat(auto-fit, 15rem);
-      grid-auto-rows: 15rem;
-      gap: 2rem;
-      justify-content: center;
-    }
-  }
-}
-
-
 .artistcard {
   position: relative;
   background-color: red;
@@ -104,6 +83,27 @@
       font-weight: 100;
       font-style: italic;
       font-size: .9rem;
+    }
+  }
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .home {
+    .title {
+      font-size: 2rem;
+      text-align: left;
+      padding-left: var(--desktopMargin);
+    }
+
+    .home__myArtists {
+      display: grid;
+      padding: 1.5rem var(--desktopMargin);
+      grid-template-columns: repeat(auto-fit, 15rem);
+      grid-auto-rows: 15rem;
+      gap: 2rem;
+      justify-content: center;
     }
   }
 }
