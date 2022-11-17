@@ -1,5 +1,7 @@
 export interface Artist{
     "id"?: number,
+    "duration"?: number,
+    "rank"?:number,
     "name": string,
     "link": string,
     "share": string,

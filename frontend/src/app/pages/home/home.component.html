@@ -12,7 +12,7 @@
       <div class="artistcard" (click)="gotoArtist(artist.id)">
         <img src={{artist.picture_big}} alt="">
         <div class="details">
-           <span class='title'>{{artist.name}}</span>
+           <span class='title'>{{artist.name | songname}}</span>
            <span class='subtitle'>{{artist.nb_fan | numbersTransform}} Fans</span>
         </div>
      </div>

@@ -7,54 +7,49 @@ import { Album } from 'src/app/interfaces/album';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-
-  total_albums :number = 0;
-  listOfArtists:any;
-  private id!: number;
-  public artist!: Artist;
-  albums!:Array<Album>;
-  top5Songs: any;
+  artist!: any;
+  listOfsearch: Array<any> = [];
+  resultOfsearch: Array<any> = [];
   searchName!: string;
 
   constructor(
-    private deezer:DeezerService,
+    private deezer: DeezerService,
     private route: ActivatedRoute,
-    private router: Router,
-    ) { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
     this.searchName = this.route.snapshot.params['name'];
-    this.get_Artist(this.searchName);
-    this.get_Artist_Albums(this.id);
-    this.get_Artist_Top5(this.id);
+    this.get_Artist_details(this.searchName);
   }
 
-  get_Artist(search:string): void {
-    this.deezer.search_Artist(search).subscribe((artist:any)=>{
-      
-      this.artist = artist;
-      this.get_Artist_Albums(artist.id);
-      this.get_Artist_Top5(artist.id);
-    })
+  get_Artist_details(search: string): void {
+    this.deezer.search_Artist(search).subscribe((artist: any) => {
+      this.resultOfsearch = artist.data;
+      console.log('hhiiiiii', artist.data);
+      this.getResult(artist.data);
+    });
   }
 
-  get_Artist_Albums(id:number): void {
-    this.deezer.get_Artist_Albums(id).subscribe((artist:any)=>{
-      console.log(artist.data);
-      this.total_albums = artist.total;
-      this.albums= artist.data;
-    })
+  getResult(results: any) {
+    if (results) {
+      results.forEach((element: any) => {
+        this.listOfsearch.push(element.album);
+      });
+    }
   }
 
-  get_Artist_Top5(id:number){
-    this.deezer.get_Top_Songs(id).subscribe((songs:any)=>{
-      console.log(songs.data);
-      this.top5Songs= songs.data;
-    })
-  }
+  gotoArtist(id: any) {
 
+    let album_id = this.resultOfsearch[id].album.id;
+    let artist_id;
+
+    this.deezer.get_One_Album(album_id).subscribe((album: any) => {
+      artist_id = album.artist.id;
+      return this.router.navigate(['/artist/' + artist_id]);
+    });
+  }
 }
