@@ -13,7 +13,7 @@ import { Album } from 'src/app/interfaces/album';
 })
 export class ArtistComponent implements OnInit {
 
-  total_albums :number = 0; 
+  total_albums :number = 0;
   listOfArtists:any;
   private id!: number;
   public artist!: Artist;
@@ -39,6 +39,7 @@ export class ArtistComponent implements OnInit {
   get_Artist(id:number): void {
     this.deezer.get_One_Artist(id).subscribe((artist:any)=>{
       this.artist = artist;
+      console.log(this.artist)
     })
   }
 

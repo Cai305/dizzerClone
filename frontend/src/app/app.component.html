@@ -1,6 +1,16 @@
-
 <div class="app">
   <app-header></app-header>
+
+  <div class="alertMessage">
+    <span class="closeBtn" onclick="this.parentElement.style.display='none';"
+      >×</span
+    >
+    <strong>Press the button to</strong
+    ><a href="https://cors-anywhere.herokuapp.com/corsdemo" class="button"
+      >Enable Dizzer Api</a
+    >
+  </div>
+
   <div class="main">
     <router-outlet></router-outlet>
   </div>

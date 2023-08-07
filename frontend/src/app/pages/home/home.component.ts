@@ -18,6 +18,7 @@ listOfArtists!: Array<Artist>;
 
      this.deezer.get_User_Artist().subscribe((data:any)=>{
       this.listOfArtists = data.data;
+      console.log(this.listOfArtists);
     })
   }
 

@@ -38,16 +38,41 @@ header {
   }
 }
 
+
+body {
+  background-color: #F5F5F5;
+  color: #555;
+  font-size: 1.1em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+hr {
+  margin: 50px 0;
+}
+
+.container {
+
+  max-width: 800px;
+  padding: 20px;
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+}
+
+
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     header {
         gap: 3rem;
         padding-right: 3rem;
-      
+
         svg {
           height: 2rem;
         }
-      
+
         .center {
           flex: 1;
           display: flex;
@@ -55,7 +80,7 @@ header {
           background-color: var(--dark);
           padding: 0.5rem;
           border-radius: var(--radius);
-      
+
           input {
             background-color: transparent;
             border: none;
@@ -63,7 +88,7 @@ header {
             color: var(--grey100);
           }
         }
-      
+
         .right {
           display: flex;
           justify-content: center;

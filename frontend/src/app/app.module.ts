@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NumbersTransformPipe } from './pipes/numbers-transform.pipe';
 import { SearchComponent } from './pages/search/search.component';
 import { SongnamePipe } from './pipes/songname.pipe';
+import { InfoBannerComponent } from './components/info-banner/info-banner.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SongnamePipe } from './pipes/songname.pipe';
     BannerComponent,
     NumbersTransformPipe,
     SearchComponent,
-    SongnamePipe
+    SongnamePipe,
+    InfoBannerComponent
   ],
   imports: [
     BrowserModule,
